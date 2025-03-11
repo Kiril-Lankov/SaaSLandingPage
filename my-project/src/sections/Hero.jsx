@@ -1,5 +1,6 @@
 import React from 'react'
 import { Element, Link as LinkScroll } from 'react-scroll'
+import Button from '../components/Button'
 const Hero = () =>  {
     return (
         <section className='relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 border-2 border-amber-400'>
@@ -21,7 +22,7 @@ const Hero = () =>  {
                         offset={-100}
                         spy
                         smooth>
-                            TEXT
+                            <Button/>
                         </LinkScroll>
                     </div>
                 </div>
