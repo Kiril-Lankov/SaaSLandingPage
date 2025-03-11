@@ -1,6 +1,6 @@
 import React from 'react'
 import {Element} from 'react-scroll' 
-import { features } from '../constants'
+import {details, features } from '../constants'
 import Button from '../components/Button'
 
 const Features = () => {
@@ -33,6 +33,11 @@ const Features = () => {
                                 <Button icon={button.icon}>{button.title}</Button>
                             </div>
                         ))}
+
+                        <ul className='relative flex justify-around flex-grow px-[5%] border-2 border-s3 rounded-7xl max-md:hidden'>
+                            <div className='absolute bg-s3/20 top-[38%] left-0 right-0 w-full h-[1px] z-10'/>
+                            {details}
+                        </ul>
                     </div>
                 </div>
             </Element>
