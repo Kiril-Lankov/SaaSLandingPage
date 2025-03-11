@@ -22,5 +22,5 @@ export const features = [
             title: 'Wath the demo'
         }
 
-    }
+    },
 ]
