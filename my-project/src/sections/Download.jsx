@@ -1,5 +1,7 @@
 import React from 'react'
 import { Element } from 'react-scroll'
+import { links } from '../constants'
+import { Marker } from '../components/Marker'
 
 const Download = () => {
     return (
@@ -20,7 +22,17 @@ const Download = () => {
                                 , we've got you covered
                             </p>
                             <ul className='flex flex-wrap items-center gap-6'>
-                                {links.map}
+                                {links.map(({id, url, icon}) => (
+                                    <li 
+                                    key={id}
+                                    className='download_tech-link download_tech-link_last-before download_tech-link_last-after'>
+                                        <a href={url}>
+                                            <span className='absolute -top-2 rotate-90'>
+                                                <Marker/>
+                                            </span>
+                                        </a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
