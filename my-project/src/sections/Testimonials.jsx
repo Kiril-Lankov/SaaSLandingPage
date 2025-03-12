@@ -1,5 +1,6 @@
 import React from 'react'
 import { testimonials } from '../constants'
+import TestimonialItem from '../components/TestimonialItem';
 
 const Testimonials = () => {
 
