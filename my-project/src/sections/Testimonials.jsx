@@ -1,6 +1,9 @@
 import React from 'react'
+import { testimonials } from '../constants'
 
 const Testimonials = () => {
+
+    const halfLength = Math.floor(testimonials.length / 2);
     return (
         <section className='relative z-2 py-24 md:py-28 lg:py-40'>
             <div className='container block lg:flex'>
@@ -10,7 +13,10 @@ const Testimonials = () => {
                 </div>
 
                 <div className='testimonials_inner-after testimonials_inner-before relative -my-12 -mr-3 flex items-start max-lg:static max-md:block'>
-                    <div className='testimonials_group-after flex-50'></div>
+                    <div className='testimonials_group-after flex-50'>
+                        {testimonials.slice(0, halfLength).map((testimonial) => 
+                        <TestimonialItem/>)}
+                    </div>
                 </div>
             </div>
         </section>
