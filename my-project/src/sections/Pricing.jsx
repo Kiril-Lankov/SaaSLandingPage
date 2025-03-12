@@ -1,10 +1,13 @@
 import clsx from 'clsx';
 import React, { useState } from 'react'
 import {Element} from 'react-scroll'
+import CountUp from 'react-countup'
 import { plans } from '../constants';
+import Button from '../components/Button';
 
 const Pricing = () => {
     const [montly, setMontly] = useState(false);
+    
     return (
         <section>
             <Element name='pricing'>
@@ -86,7 +89,58 @@ const Pricing = () => {
                   >
                     {plan.title}
                   </div>
-                 </div>
+                  <div className='relative z-2 flex items-center justify-center'>
+                    <div className={clsx(
+                        "h-num flex items-start",
+                        index === 1 ? "text-p3" : "text-p4",
+                      )}
+                      >
+                        ${" "}
+                         <CountUp
+                        start={plan.priceMonthly}
+                        end={montly ? plan.priceMonthly : plan.priceYearly}
+                        duration={0.4}
+                        useEasing={false}
+                        preserveValue
+                        />
+                      </div>
+                      <div className="small-1 relative top-3 ml-1 uppercase">
+                      / mo
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={clsx(
+                    "body-1 relative z-2 mb-10 w-full border-b-s2 pb-9 text-center text-p4",
+                    index === 1 && "border-b",
+                  )}
+                >
+                  {plan.caption}
+                </div>
+                <ul className="mx-auto space-y-4 xl:px-7">
+                  {plan.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="relative flex items-center gap-5"
+                    >
+                      <img
+                        src={"/images/check.png"}
+                        alt="check"
+                        className="size-10 object-contain"
+                      />
+                      <p className="flex-1">{feature}</p>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-10 flex w-full justify-center">
+                  <Button icon={plan.icon}>Get Started</Button>
+                </div>
+                {index === 1 && (
+                  <p className="small-compact mt-9 text-center text-p3 before:mx-2.5 before:content-['-'] after:mx-2.5 after:content-['-']">
+                    Limited time offer
+                  </p>
+                )}
                 </div>
                 )}
             </div>
