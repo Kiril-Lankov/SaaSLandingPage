@@ -26,7 +26,9 @@ const Download = () => {
                                     <li 
                                     key={id}
                                     className='download_tech-link download_tech-link_last-before download_tech-link_last-after'>
-                                        <a href={url}>
+                                        <a 
+                                        href={url}
+                                        className='size-22 download_tech-icon_before relative flex items-center justify-center rounded-half  border-2 border-s3 bg-s1 transition-borderColor duration-500'>
                                             <span className='absolute -top-2 rotate-90'>
                                                 <Marker/>
                                             </span>
