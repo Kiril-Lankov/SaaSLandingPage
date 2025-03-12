@@ -1,7 +1,10 @@
 import React from 'react'
 import {Element} from 'react-scroll'
+import { faq } from '../constants'
 
 const Faq = () => {
+    const halfLength = Math.floor(faq.length/2);
+     
     return (
         <section>
             <Element name='faq' className='relative'>
@@ -24,7 +27,11 @@ const Faq = () => {
                     alt='logo'
                     className='size-1/2'  />
                  </div>
-                 <div className='relative flex-1 pt-24'></div>
+                 <div className='relative flex-1 pt-24'>
+                    {faq.slice(0, halfLength).map((faq, index) => (
+                        <div>{faq.question}</div>
+                    ))}
+                 </div>
                 </div>
             </div>
 
