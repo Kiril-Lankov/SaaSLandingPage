@@ -30,6 +30,11 @@ const Download = () => {
                                             <span className='absolute -top-2 rotate-90'>
                                                 <Marker/>
                                             </span>
+                                            <img 
+                                            src={'/images/lines.svg'} 
+                                            alt='lines'
+                                            className='absolute size-13/20 object-contain  ' />
+                                            <span className='download_tech-icon '>{icon}</span>
                                         </a>
                                     </li>
                                 ))}
